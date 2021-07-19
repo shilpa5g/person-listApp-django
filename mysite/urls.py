@@ -19,4 +19,6 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('app.urls')),
+    path('accounts/', include('django.contrib.auth.urls')),
+    # path('password_reset_form/', include('password_reset_form.urls')),
 ]

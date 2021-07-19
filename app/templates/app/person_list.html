@@ -3,7 +3,8 @@
 
 {% block content %}
 <h2>Person List</h2>
-
+<a href="{% url 'person_new' %}" class = "btn btn-success">Add new person</a>
+<a href="{% url 'logout' %}" class = "btn btn-danger">Logout</a>
 <table>
   <tr>
     <th>name</th>
@@ -32,8 +33,7 @@
       </tr>
     
     {% endfor %}
-    <a href="{% url 'person_new' %}" class="top-menu">
-  Add new person
+    
     </table> 
 
 {% endblock %} 
