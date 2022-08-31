@@ -1,0 +1,43 @@
+{% extends 'app/base.html' %}
+
+
+{% block content %}
+<h2>Person List</h2>
+<a href="{% url 'person_new' %}" class = "btn btn-success">Add new person</a>
+<a href="{% url 'logout' %}" class = "btn btn-danger">Logout</a>
+<table>
+  <tr>
+    <th>name</th>
+    <th>age</th>
+    <th>phone_number</th>
+    <th>address</th>
+    <th>action</th>
+
+  </tr>
+  
+    
+    {% for person in persons %}
+      </tr>
+    
+        <td>
+          <a href="{% url 'person_detail' pk=person.pk %}" class = ><p>{{ person.name|linebreaksbr }}</p></a>
+
+        </td>
+        <td><p>{{ person.age|linebreaksbr }}</p></td>
+        <td><p>{{ person.phone_number|linebreaksbr }}</p></td>
+        <td><p>{{ person.address|linebreaksbr }}</p></td>
+        <td> 
+          <a href="{% url 'person_edit' pk=person.pk %}" class = "btn btn-warning">Edit</a>
+          <a href="{% url 'person_delete' pk=person.pk %}" class = "btn btn-danger">Delete</a>
+        </td>
+      </tr>
+    
+    {% endfor %}
+    
+    </table> 
+
+{% endblock %} 
+
+  
+
+

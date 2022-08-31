@@ -1,0 +1,33 @@
+{% extends 'app/base.html' %}
+
+{% block content %}
+
+
+  <form action="" method="post">
+    {% csrf_token %}
+    <table>
+    {{ form.as_table }}
+    </table>
+    <input type="submit" class = "btn btn-success">
+    <a href="{% url 'person_list' %}" class = "btn btn-danger">Cancel</a>
+  </form>
+
+
+
+  <table>
+  
+  
+    <tr>
+    {% for person in persons %}
+      
+    
+        <td><p>{{ person.name|linebreaksbr }}</p></td>
+        <td><p>{{ person.age|linebreaksbr }}</p></td>
+        <td><p>{{ person.phone_number|linebreaksbr }}</p></td>
+        <td><p>{{ person.address|linebreaksbr }}</p></td>
+      
+    
+    {% endfor %}
+    </tr>
+    </table> 
+{% endblock %}

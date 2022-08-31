@@ -1,0 +1,42 @@
+{% extends 'app/base.html' %}
+
+{% block content %}
+
+<form action="" method="post">
+    {% csrf_token %}
+    <table>
+    {{ form.as_table }}
+    </table>
+    
+    <a href="{% url 'person_list' %}" class = "btn btn-success">Back To Home Page</a>
+  </form>
+        <table>
+  <tr>
+    <th>name</th>
+    <th>age</th>
+    <th>phone_number</th>
+    <th>address</th>
+  </tr>
+  
+    
+    
+      <tr>
+    
+        <td>{{data.name}}</td>
+        <td>{{data.age}}</td>
+        <td>{{data.phone_number}}</td>
+        <td>{{data.address}}</td>
+        
+      </tr>
+    
+    
+    </table> 
+{% endblock %}
+
+<!-- 
+<article>
+    name:{{data.name}}
+    age:{{data.age}}
+    mobile_number:{{data.mobile_number}}
+    address:{{data.address}}
+    </article> -->
